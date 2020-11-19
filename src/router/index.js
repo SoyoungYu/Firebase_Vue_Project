@@ -7,6 +7,7 @@ import SignUp from '@/components/SignUp'
 import BoardList from '@/components/BoardList'
 import BoardCreate from '@/components/BoardCreate'
 import BoardRead from '@/components/BoardRead'
+import BoardUpdate from '@/components/BoardUpdate'
 
 Vue.use(Router)  
 
@@ -45,6 +46,14 @@ export default new Router({
             path: '/read/:id',
             name: 'BoardRead',
             component: BoardRead,
+            meta: {
+                requiresAuth: true
+            }
+        },
+        {
+            path: '/update/:id',
+            name: 'BoardUpdate',
+            component: BoardUpdate,
             meta: {
                 requiresAuth: true
             }
