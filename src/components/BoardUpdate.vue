@@ -19,7 +19,8 @@
                             hide-details
                             placeholder="닉네임"
                             single-line
-                            v-model.trim="boards.writer"
+                            disabled
+                            v-model="boards.writer"
                         ></v-text-field>
                         <v-textarea
                             class="contents-text"

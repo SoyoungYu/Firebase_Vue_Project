@@ -8,7 +8,7 @@
                             게시판 목록
                             <v-spacer></v-spacer>
                         </v-card-title>
-                        <v-data-table striped hover 
+                        <v-data-table striped hover
                             :headers="headers"
                             :items="boards"
                             :key="boards.key"
@@ -52,7 +52,7 @@ export default {
             itemsPerPage: 10,
             headers: [
                 { text: '제목', value: 'title', sortable: false },
-                { text: '글쓴이', value: 'writer', sortable: false },
+                { text: '작성자', value: 'writer', sortable: false },
                 { text: '날짜', value: 'timestamp', sortable: false },
             ],
             boards: [],

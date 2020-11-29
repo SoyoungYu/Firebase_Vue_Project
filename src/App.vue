@@ -1,7 +1,6 @@
 <template>
   <v-app>
         <Navi></Navi>
-    <!-- <Navi></Navi> -->
     <v-content>
       <router-view></router-view>
     </v-content>

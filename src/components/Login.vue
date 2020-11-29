@@ -20,7 +20,9 @@
                     <v-card-actions>
                         <v-btn class="btn" color="#917FF5" v-on:click="login">로그인</v-btn>
                     </v-card-actions>
-                    <span>아직 회원이 아니신가요? <router-link to="/signup" tag="a">회원가입</router-link>을 해주세요!</span>
+                    <p>
+                        <span>아직 회원이 아니신가요? <router-link to="/signup" tag="a">회원가입</router-link>을 해주세요!</span>
+                    </p>
                 </v-card>
             </v-flex>
         </v-layout>
@@ -83,5 +85,10 @@ export default {
         height: 50px;
         font-size: 15px;
         color: #fff;
+    }
+
+    p {
+        text-align: center;
+        font-size: 14px;
     }
 </style>

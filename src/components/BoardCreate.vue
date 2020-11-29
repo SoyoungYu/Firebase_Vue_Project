@@ -19,6 +19,7 @@
                             hide-details
                             placeholder="닉네임"
                             single-line
+                            disabled
                             v-model="writer"
                         ></v-text-field>
                         <v-textarea
@@ -45,13 +46,16 @@ import router from '@/router/index.js'
 
 export default {
     data() {
-        
         return {
             title: '',
             content: '',
             writer: '',
             timestamp: '',
         }
+    },
+    created() {
+        const user = firebase.auth().currentUser;
+        this.writer = user.displayName;
     },
     methods: {
         upload() {
@@ -60,7 +64,7 @@ export default {
                 title: this.title,
                 content: this.content,
                 writer: this.writer,
-                timestamp: this.getFormatDate()
+                timestamp: this.getFormatDate(),
             })
             .then(function() {
                 alert("글이 성공적으로 작성되었습니다!");
@@ -90,11 +94,15 @@ export default {
 </script>
 
 <style scoped>
+    input {
+        margin-bottom: 20px;
+    }
+
     .nickname-text {
         width: 500px
     }
 
     .contents-text {
-        height: 350px
+        height: 200px
     }
 </style>
